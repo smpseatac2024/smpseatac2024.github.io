@@ -33,58 +33,50 @@ div {
 }
 
 nav {
-  border-radius: 15px;
-  margin: 0;
-  background: #f9f9f9;
-  padding: 16px;
-
-  .menuItems {
+    border-radius: 15px;
+    margin: 0;
+    background: #f9f9f9;
+    padding: 16px;
+}
+.menuItems {
     list-style: none;
     display: flex;
     justify-content: space-evenly;
     border-radius: 15px;
-  }
-}
+	}
 
-.menuItems li {
-  margin: 25px;
-
-
-  a {
-    text-decoration: none;
-    color: black;
-    font-size: 30px;
-    font-weight: 400;
-    transition: all 0.5s ease-in-out;
-    position: relative;
-    text-transform: uppercase;
-
-    &::before {
-      content: attr(data-item);
-      transition: 0.5s;
-      color: #8254ff;
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      width: 0;
-      overflow: hidden;
+    .menuItems li {
+        margin: 25px;
     }
-
-    &:hover {
-      &::before {
-        width: 100%;
-        transition: all 0.5s ease-in-out;
-      }
+    .menuItems li a {
+            text-decoration: none;
+            color: black;
+            font-size: 30px;
+            font-weight: 400;
+            transition: all 0.5s ease-in-out;
+            position: relative;
+            text-transform: uppercase;
     }
-  }
+        .menuItems li a::before {
+            content: attr(data-item);
+            transition: 0.5s;
+            color: #8254ff;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 0;
+            overflow: hidden;
+        }
 
-}
-
-img {
-  margin: 5px;
-  border-radius: 50%;
+        .menuItems li a:hover::before {
+            width: 100%;
+            transition: all 0.5s ease-in-out;
+        }
+img{
+	margin: 5px;
+	border-radius: 50%;
 }
 
 h1 {
@@ -308,4 +300,45 @@ header .current-date {
 
 .days li:not(.active):hover::before {
   background: #f2f2f2;
+}
+
+.faq-container {
+    width: 80%;
+    margin: auto;
+}
+
+.faq {
+    border: 1px solid #000;
+    margin-bottom: 5px;
+}
+
+.faq-question {
+    width: 100%;
+    background: black;
+    color: white;
+    padding: 15px;
+    font-size: 18px;
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    display: none;
+    background: white;
+    padding: 15px;
+    border-top: 1px solid #000;
+    text-align: left;
+}
+
+.faq-question .arrow {
+    transition: transform 0.3s ease-in-out;
+}
+
+.faq.active .faq-question .arrow {
+    transform: rotate(180deg);
 }
