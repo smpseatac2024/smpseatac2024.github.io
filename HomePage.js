@@ -45,3 +45,22 @@ prevNextIcon.forEach(icon => { // getting prev and next icons
         renderCalendar(); // calling renderCalendar function
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const faqs = document.querySelectorAll(".faq");
+
+    faqs.forEach(faq => {
+        faq.querySelector(".faq-question").addEventListener("click", function () {
+            this.parentElement.classList.toggle("active");
+            let answer = this.nextElementSibling;
+
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+                this.querySelector(".arrow").innerHTML = "&#x25BA;"; // Right arrow
+            } else {
+                answer.style.display = "block";
+                this.querySelector(".arrow").innerHTML = "&#x25BC;"; // Down arrow
+            }
+        });
+    });
+});
