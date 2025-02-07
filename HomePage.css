@@ -375,14 +375,16 @@ body .form-container {
 }
 
 .form-container h2 {
-  margin-bottom: 20px;
+  margin-bottom: 1%;
   padding: 10%;
-  font-size: 24px;
+  font-size: 30px;
+  font-weight: bolder;
+  color: black;
   text-align: center;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin: auto;
   /* Changed size of font and color to form */
   color: black;
   font-size: 20px;
@@ -444,7 +446,6 @@ body .form-container {
   background-color: #f9f9f9;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
-
 .grid-calender-logo {
   grid-row: 1 / span 2;
   grid-column: 1;
@@ -472,6 +473,14 @@ body .form-container {
   grid-column: 1 / span 2;
   color: black;
   text-align: center;
+}
+.grid-calender-contact p{
+  font-size: 25px;
+  font-weight: lighter;
+}
+.grid-calender-contact h3 {
+  font-size: 15px;
+  font-weight: bolder;
 }
 
 .contact-contaner {
