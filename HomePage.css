@@ -373,9 +373,9 @@ body .form-container {
   background-color: #218838;
 }
 
-.grid-container {
+.grid-calenderform-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto 45%;
   padding: 10px;
   margin: 10px;
   border-radius: 15px;
@@ -383,23 +383,23 @@ body .form-container {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
-.grid-logo {
+.grid-calender-logo {
   grid-row: 1 / span 2;
   grid-column: 1 / span 2;
 }
 
-.grid-owner {
+.grid-calender-owner {
   grid-row: 3 / span 1;
   grid-column: 1 / span 1;
   text-align: center;
 }
 
-.grid-owner img {
+.grid-calender-owner img {
   width: 50%;
   border-radius: 25%;
 }
 
-.grid-contact {
+.grid-calender-contact {
   grid-row: 3 / span 1;
   grid-column: 2 / span 1;
   color: black;
