@@ -93,6 +93,7 @@ p {
 }
 .info-container {
   display: flex;
+  color: black;
   flex-direction: row;
   margin: 10px;
 }
@@ -116,7 +117,27 @@ body .form-container {
   margin-left: 25%;
   margin-right: 25%;
 }
-
+.gallery-container {
+  text-align: center;
+  margin: 10px;
+}
+.image-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #f4f4f4;
+  border-radius: 5px;
+  padding: 5px;
+  transition: transform 0.2s;
+}
+.image-section img:hover {
+  transform: scale(1.05);
+}
 .form-container {
   background-color: black;
   padding: 20px;
