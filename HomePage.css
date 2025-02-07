@@ -196,7 +196,7 @@ p {
   border-radius: 10px;
   position: relative;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  /*backdrop-filter: blur(10px);*/
   margin-right: -150px;
 }
 
@@ -371,6 +371,7 @@ body .form-container {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 50%;
+  max-height: 1000px;
 }
 
 .form-container h2 {
