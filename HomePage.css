@@ -91,7 +91,21 @@ h1 {
 p {
   font-size: 25px;
 }
-
+.info-container {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+.info-container img {
+  width: auto;
+  margin-left: 10%;
+  margin-right: 10%;
+  border-radius: 25%;
+}
+.info-container p {
+  width: 50%;
+  margin: 20px;
+}
 body .form-container {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
