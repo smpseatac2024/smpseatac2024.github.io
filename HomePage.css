@@ -382,6 +382,11 @@ body .form-container {
 
 .form-group {
   margin-bottom: 15px;
+  /* Changed size of font and color to form */
+  color: black;
+  font-size: 20px;
+  font-weight: bolder;
+}
 }
 
 .form-group label {
@@ -441,17 +446,19 @@ body .form-container {
 
 .grid-calender-logo {
   grid-row: 1 / span 2;
-  grid-column: 1 ;
+  grid-column: 1;
   text-align: center;
   color: black;
 }
+
 .grid-calender-logo img {
   border-radius: 50%;
 }
 
 .grid-calender-owner {
   grid-row: 1 / span 2;
-  grid-column: 2 ;;
+  grid-column: 2;
+  ;
   text-align: center;
 }
 
@@ -460,7 +467,7 @@ body .form-container {
 }
 
 .grid-calender-contact {
-  grid-row: 3 ;
+  grid-row: 3;
   grid-column: 1 / span 2;
   color: black;
   text-align: center;
@@ -485,6 +492,7 @@ body .form-container {
   padding: 25px 30px 10px;
   justify-content: space-between;
 }
+
 header .icons {
   display: flex;
 }
@@ -692,4 +700,16 @@ footer {
   }
 }
 
+/* For the submit button to be responsive */
 
+@media (min-width: 768px) {
+  .form-container {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .form-container {
+    width: 50%;
+  }
+}
