@@ -15,48 +15,67 @@
 </head>
 
 <body>
-	<div>
-		<!--Modified link-->
-		<img src=".\Images\ClientLogo.jpg" width="300" height="300">
-	</div>
-	<div class="nav-container">
-		<section>
-			<nav>
-				<ul class="menuItems">
-					<li><a href="#about" data-item='About' width="50" height="15px">About</a></li>
-					<li><a href='#gallery' data-item='Gallery' width="50" height="15px">Gallery</a></li>
-					<li><a href='#faq' data-item='FAQ' width="50" height="15px">FAQ</a></li>
-					<li><a href='#contact' data-item='Contact' width="50" height="15px">Contact</a></li>
-				</ul>
-			</nav>
-		</section>
-	</div>
+	<header class="header">
+		<div class="logo">
+			<img src="./Images/ClientLogo.jpg" alt="SMP Seatac Logo">
+		</div>
+
+		<div class="nav-container">
+            <nav>
+                <ul class="menuItems">
+                    <li><a href="#about" data-item='About' width="50" height="15px">About</a></li>
+                    <li><a href='#gallery' data-item='Gallery' width="50" height="15px">Gallery</a></li>
+                    <li><a href='#faq' data-item='FAQ' width="50" height="15px">FAQ</a></li>
+                    <li><a href='#contact' data-item='Contact' width="50" height="15px">Contact</a></li>
+                </ul>
+            </nav>	
+		</div>
+	</header>
+	<section class="banner">
+		<div class="banner-content">
+			<h1>WELCOME TO SCALP MICRO PIGMENTATION</h1>
+		</div>
+		<div class="overlay"></div>
+		<img src="./Images/SMP_banner.jpg" alt="Banner Image">
+	</section>
 	<div class="about-container" id="about">
-		<h1>About</h1>
 		<div class="info-container">
-			<!--Modified link-->
-			<img src=".\Images\Client_Image_1.jpg" width="400" height="400">
-			<p>SMP Seatac is a mobile business based around the Seatac area; we provide services for hair loss solutions
-				for thinning hair, alopecia, and scar camouflage.
-				Offering enhanced shaved head aesthetics. These procedures will help improve your confidence. We arrange
-				personalized consultations to understand the needs and
-				desired outcomes for clients. Ensuring the delivery will give natural and realistic results. SMP
-				SeaTac’s key focuses are personalized consultations and quality
-				outcomes. To learn more about scalp micropigmentation or to schedule your free consultation, contact us
-				today!
-			</p>
+			<div class="about-image">
+				<img src="./Images/Client_Image_1.jpg" alt="About Image">
+			</div>
+			<div class="about-content">
+				<h1>ABOUT US</h1>
+				<h3>SMP Seatac</h3>
+				<p>
+					We are a mobile business based around the Seatac area; we provide services for hair loss
+					solutions for thinning hair, alopecia, and scar camouflage.
+					Offering enhanced shaved head aesthetics. These procedures will help improve your confidence.
+					We arrange personalized consultations to understand the needs and
+					desired outcomes for clients, ensuring the delivery will give natural and realistic results.
+					SMP SeaTac’s key focus is personalized consultations and quality outcomes.
+					<br><br>
+					To learn more about scalp micropigmentation or to schedule your free consultation, contact us today!
+				</p>
+			</div>
 		</div>
 	</div>
-	<div class="galery-container" id="gallery">
-		<h1>Gallery</h1>
-		<section class="image-section">
-			<img src=".\Images\BeforeAfter_Image_female_2_realself.jpg" alt="smp work 1">
-			<img src=".\Images\BeforeAfter_Image_female_realself.jpg" alt="smp work 2">
-			<img src=".\Images\BeforeAfter_Image_male_realself.jpg" alt="smp work 3">
-			<img src=".\Images\BeforeAfterScar_Image_male_2_realself.jpg" alt="smp work 4">
-			<img src=".\Images\BeforeAfterScar_Image_male_realself.jpg" alt="smp work 5">
-			<img src=".\Images\BeforeAfterTopview_Image_male_realself.jpg" alt="smp work 5">
-		</section>
+	<div class="gallery-container" id="gallery">
+		<div class="gallery-title-container">
+			<h1 class="gallery-title"> OUR GALLERY</h1>
+			<p class="gallery-quote">"Beauty begins the moment you decide to be yourself."</p>
+		</div>
+		<div class="gallery-wrapper">
+			<div class="gallery-frame">
+				<div class="gallery-grid">
+					<img src="./Images/BeforeAfter_Image_female_2_realself.jpg" alt="smp work 1">
+					<img src="./Images/BeforeAfter_Image_female_realself.jpg" alt="smp work 2">
+					<img src="./Images/BeforeAfter_Image_male_realself.jpg" alt="smp work 3">
+					<img src="./Images/BeforeAfterScar_Image_male_2_realself.jpg" alt="smp work 4">
+					<img src="./Images/BeforeAfterScar_Image_male_realself.jpg" alt="smp work 5">
+					<img src="./Images/BeforeAfterTopview_Image_male_realself.jpg" alt="smp work 6">
+				</div>
+			</div>
+		</div>
 	</div>
 	<div class="faq-container" id="faq">
 		<h1>FAQ</h1>
@@ -79,8 +98,9 @@
 		</div>
 
 		<div class="faq">
-			<button class="faq-question">What does the schedule of the sessions look like?<span
-					class="arrow">&#x25BA;</span></button>
+			<button class="faq-question">
+				What does the schedule of the sessions look like?<span class="arrow">&#x25BA;</span>
+			</button>
 			<div class="faq-answer">
 				<p>
 					The SMP session typically takes 3-4 sessions. We space the
@@ -100,8 +120,9 @@
 		</div>
 
 		<div class="faq">
-			<button class="faq-question">What are the DOs and DONTs right after SMP?<span
-					class="arrow">&#x25BA;</span></button>
+			<button class="faq-question">
+				What are the DOs and DONTs right after SMP?<span class="arrow">&#x25BA;</span>
+			</button>
 			<div class="faq-answer">
 				<p>
 					It’s best to avoid extended sun exposure, shaving, soaking
@@ -130,8 +151,10 @@
 		<div class="faq">
 			<button class="faq-question">How can I contact you?<span class="arrow">&#x25BA;</span></button>
 			<div class="faq-answer">
-				<p>Feel free to contact me via email at SMPSeaTac@gmail.com,
-					text (206)-304-0755, or DM on Instagram @SMP_SEATAC</p>
+				<p>
+					Feel free to contact me via email at SMPSeaTac@gmail.com,
+					text (206)-304-0755, or DM on Instagram @SMP_SEATAC
+				</p>
 			</div>
 		</div>
 	</div>
@@ -184,7 +207,8 @@
 				<p>Name - Owner/Operator</p>
 				<p>Phone: 206-555-5555</p>
 				<p>Email:</p>
-				<h4>If for any reason you need to cancel or reshedule please do so 24 hours in advance of appointment.
+				<h4>
+					If for any reason you need to cancel or reshedule please do so 24 hours in advance of appointment.
 				</h4>
 			</div>
 			<div class="grid-calendar-wrapper">
