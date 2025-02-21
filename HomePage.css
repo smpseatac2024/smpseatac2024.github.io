@@ -26,15 +26,43 @@ body {
 }
 .about-row{
   grid-row: 2;
+  background-color: #8254ff;
 }
 .gallery-row{
   grid-row: 3;
 }
 .faq-row{
   grid-row: 4;
+  padding-bottom: 40px;
+  background-color: plum;
 }
-.contact-row{
-  grid-row: 5;
+.contact-row {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('./Images/SMP_Image_1_B&W.jpg') no-repeat center center;
+  background-size: cover; /* Ensure the image covers the entire background area */
+  z-index: -1;
+  opacity: 0.5; /* Adjust opacity as needed */
+}
+
+.contact-row::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Add a semi-transparent overlay */
+  z-index: -1;
 }
 .footer-row-row{
   grid-row: 6;
@@ -77,7 +105,7 @@ div {
 .header {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding: 0px 50px;
   height: 180px;
@@ -89,12 +117,11 @@ div {
   z-index: 1000;
 }
 
+
 .nav-container {
   display: flex;
   justify-content: flex-end;
-  /* Aligns menu items towards the right */
-  align-items: flex-end;
-  padding-right: 100px;
+  align-items: center;
   width: 100%;
 }
 
@@ -104,22 +131,19 @@ nav {
 }
 
 .menuItems {
-  padding-top: 80px;
-  padding-left: 1%;
   list-style: none;
   display: flex;
   gap: 30px;
-  /* Adds space between menu items */
 }
 
 .menuItems li {
-  margin: 25px;
+  margin: 0;
 }
 
 .menuItems li a {
   text-decoration: none;
   color: black;
-  font-size: 30px;
+  font-size: 18px;
   font-weight: 400;
   transition: all 0.5s ease-in-out;
   position: relative;
@@ -145,10 +169,28 @@ nav {
   transition: all 0.5s ease-in-out;
 }
 
+/* Hamburger menu styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  position: absolute;
+  right: 20px; /* Float to the right */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: black;
+  margin: 4px;
+  transition: all 0.3s ease;
+}
 .banner {
   position: relative;
   width: 100%;
-  max-height: 20%;
+  max-height: 800px;
   overflow: hidden;
   padding: 0;
   display: flex;
@@ -176,7 +218,8 @@ nav {
 
 .banner img {
   width: 100%;
-  height: 50%;
+  height: auto;
+  max-height: 800px;
   object-fit: cover;
   /* Ensures the image covers the full section */
   object-position: center;
@@ -834,6 +877,48 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .banner-content h1 {
+    font-size: 60px;
+  }
+  .menuItems {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .menuItems li {
+    margin: 10px 0;
+    text-align: center;
+  }
+
+  .menuItems li a {
+    font-size: 20px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hamburger.active .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger.active .line2 {
+    opacity: 0;
+  }
+
+  .hamburger.active .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .menuItems.active {
+    display: flex;
+  }
   .gallery-grid {
     grid-template-columns: 1fr;
   }
@@ -895,6 +980,9 @@ footer {
 }
 
 @media (max-width: 480px) {
+  .banner-content h1 {
+    font-size: 40px;
+  }
   .gallery-title {
     font-size: 40px;
   }
