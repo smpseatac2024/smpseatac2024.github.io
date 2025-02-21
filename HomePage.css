@@ -48,10 +48,10 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('./Images/SMP_Image_1_B&W.jpg') no-repeat center center;
+  background: url('./Images/SMP_Image_1_B&W_High.jpg') no-repeat center center;
   background-size: cover; /* Ensure the image covers the entire background area */
   z-index: -1;
-  opacity: 0.5; /* Adjust opacity as needed */
+  /*opacity: 0.5; /* Adjust opacity as needed */
 }
 
 .contact-row::after {
@@ -109,7 +109,7 @@ div {
   align-items: center;
   padding: 0px 50px;
   height: 180px;
-  background: white;
+  background: black;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   top: 0;
@@ -129,7 +129,6 @@ nav {
   background: none;
   padding: 0;
 }
-
 .menuItems {
   list-style: none;
   display: flex;
@@ -142,7 +141,7 @@ nav {
 
 .menuItems li a {
   text-decoration: none;
-  color: black;
+  color: white;
   font-size: 18px;
   font-weight: 400;
   transition: all 0.5s ease-in-out;
@@ -242,7 +241,7 @@ p {
 }
 
 .about-container {
-  background: #d4d4d4;
+  background: plum;
   padding-top: 100px;
   padding-bottom: 120px;
   padding-right: 15%;
@@ -266,10 +265,10 @@ p {
   gap: 50px;
   max-width: 1200px;
   padding: 60px;
-  border: 2px solid black;
+  border: 5px solid black;
   /* Light transparent border */
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.1);
+  background-color: lightgray;
   /*backdrop-filter: blur(10px);*/
   flex-wrap: wrap;
 }
