@@ -103,3 +103,13 @@ form.addEventListener('submit', function (e) {
             }, 3000);
         });
 });
+// Hamburger Icon
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const menuItems = document.querySelector('.menuItems');
+  
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      menuItems.classList.toggle('active');
+    });
+  });
