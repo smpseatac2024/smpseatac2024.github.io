@@ -10,15 +10,43 @@
 
 
 body {
-  display: flex;
-  flex-direction: column;
+  display:grid;
+  grid-template-rows: auto auto auto auto auto auto;
   justify-content: center;
   align-items: center;
   position: relative;
   font-family: Hack, monospace;
   min-height: 100vh;
   background: darkgray;
-  overflow-x: hidden;
+  overflow: auto;
+  max-height: 100%;
+}
+.header-row{
+  grid-row: 1;
+}
+.about-row{
+  grid-row: 2;
+}
+.gallery-row{
+  grid-row: 3;
+}
+.faq-row{
+  grid-row: 4;
+}
+.contact-row{
+  grid-row: 5;
+}
+.footer-row-row{
+  grid-row: 6;
+}
+/* Ensure containers cover the whole row */
+.header-row,
+.about-row,
+.gallery-row,
+.faq-row,
+.contact-row,
+.footer-row-row {
+  grid-column: 1 / -1;
 }
 
 div {
@@ -27,7 +55,7 @@ div {
 }
 
 .logo {
-  position: absolute;
+  position: relative;
   left: 20%;
   transform: translateX(-50%);
   top: 50px;
@@ -35,7 +63,8 @@ div {
 }
 
 .logo img {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
   /* Adjust size */
   border-radius: 50%;
   background: white;
@@ -76,6 +105,7 @@ nav {
 
 .menuItems {
   padding-top: 80px;
+  padding-left: 1%;
   list-style: none;
   display: flex;
   gap: 30px;
@@ -118,7 +148,7 @@ nav {
 .banner {
   position: relative;
   width: 100%;
-  height: 100vh;
+  max-height: 20%;
   overflow: hidden;
   padding: 0;
   display: flex;
@@ -146,12 +176,11 @@ nav {
 
 .banner img {
   width: 100%;
-  height: 100%;
+  height: 50%;
   object-fit: cover;
   /* Ensures the image covers the full section */
   object-position: center;
   /* Centers the image */
-  border-radius: 0;
   padding: 0;
 
 }
@@ -171,10 +200,14 @@ p {
 
 .about-container {
   background: #d4d4d4;
-  padding: 100px 10% 120px;
+  padding-top: 100px;
+  padding-bottom: 120px;
+  padding-right: 15%;
   display: flex;
   justify-content: center;
-  width: 100vw;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
   /* Make it cover the full screen */
   max-width: 100%;
   /* Prevent any unwanted margins */
@@ -190,25 +223,19 @@ p {
   gap: 50px;
   max-width: 1200px;
   padding: 60px;
-  padding-left: 400px;
   border: 2px solid black;
   /* Light transparent border */
   border-radius: 10px;
-  position: relative;
   background: rgba(255, 255, 255, 0.1);
   /*backdrop-filter: blur(10px);*/
-  margin-right: -150px;
+  flex-wrap: wrap;
 }
 
 .about-image {
-  position: absolute;
-  width: 450px;
+  flex: 1 1 300px;
+  max-width: 450px;
   /* Bigger image */
-  height: auto;
-  z-index: 3;
-  /* Make it overlap the border */
-  margin-left: -550px;
-  /* Move image to the left */
+  margin: 20px;
 }
 
 .about-image img {
@@ -218,8 +245,10 @@ p {
 }
 
 .about-content {
+  flex: 2 1 600px;
   max-width: 800px;
   text-align: left;
+  margin: 20px;
 }
 
 .about-content h1 {
@@ -235,10 +264,12 @@ p {
 }
 
 .about-content p {
-  font-size: 20px;
+  /* Changed size of font in about section*/
+  font-size: 25px;
   color: black;
   line-height: 1.6;
 }
+
 
 .about-container::after {
   content: "";
@@ -257,33 +288,32 @@ p {
   /* Black background */
   padding: 60px 10%;
   position: relative;
-  overflow: hidden;
   width: 100%;
-  height: 800px;
+  height: 100%;
   /* Fixed height to allow scrolling */
-  display: flex;
+  display: grid;
+  grid-template-columns: auto auto;
   align-items: center;
 }
 
 .gallery-title-container {
-  position: absolute;
-  left: 7%;
-  /* Align to the left */
-  top: 30%;
+  position: relative;
   text-align: right;
+  grid-column: 1;
+  column-width: 50%;
 }
 
 .gallery-title {
   color: white;
   font-size: 90px;
   font-weight: bold;
-  position: absolute;
+  position: relative;
 }
 
 .gallery-quote::before,
 .gallery-quote::after {
   content: "";
-  position: absolute;
+  position: relative;
   width: 400px;
   /* Length of the lines */
   height: 3px;
@@ -319,16 +349,18 @@ p {
   display: flex;
   justify-content: flex-end;
   /* Pushes images to the right */
-  width: 100%;
+  grid-column: 2;
+  flex-wrap: wrap;
 }
 
 /* Image Grid */
 .gallery-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /*grid-template-columns: repeat(2, 1fr);
   /* 2 images per row */
   gap: 5px;
   overflow-y: auto;
+  
   /* Enables vertical scrolling */
   height: 635px;
   /* Restrict height */
@@ -337,10 +369,18 @@ p {
   /* White border */
 }
 
+.gallery_img_item {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
 .gallery-grid img {
   width: 500px;
   height: 250px;
+  margin-top: 8px;
   object-fit: cover;
+  vertical-align: middle;
   border: 2px solid white;
   /* White border */
   transition: transform 0.3s ease-in-out;
@@ -355,11 +395,19 @@ p {
   display: none;
 }
 
+.contact-contaner{
+  display: grid;
+  grid-template-rows: auto auto;
+  height: 100%;
+  
+}
+
 body .form-container {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
   display: flex;
   justify-content: center;
+  align-items: center;
   height: 100vh;
   margin-left: 25%;
   margin-right: 25%;
@@ -371,7 +419,10 @@ body .form-container {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 50%;
-  max-height: 1000px;
+  max-height: 80vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .form-container h2 {
@@ -385,9 +436,8 @@ body .form-container {
 
 .form-group {
   margin: auto;
-  /* Changed size of font and color to form */
   color: black;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bolder;
 }
 
@@ -432,6 +482,7 @@ body .form-container {
 }
 
 .grid-calenderform-container {
+  grid-row: 2;
   display: grid;
   grid-template-columns: auto auto 50%;
   grid-template-rows: auto auto 50%;
@@ -446,6 +497,7 @@ body .form-container {
   background-color: #f9f9f9;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
+
 .grid-calender-logo {
   grid-row: 1 / span 2;
   grid-column: 1;
@@ -473,10 +525,12 @@ body .form-container {
   color: black;
   text-align: center;
 }
-.grid-calender-contact p{
+
+.grid-calender-contact p {
   font-size: 25px;
   font-weight: lighter;
 }
+
 .grid-calender-contact h3 {
   font-size: 15px;
   font-weight: bolder;
@@ -698,17 +752,18 @@ footer {
     padding: 5%;
   }
 
-    .footer-container .footer-row ul li {
-        display: block;
-        margin: 10px 0px;
-        text-align: left;
-    }
-    .footer-container .footer-row a i {
-      margin: 0% 5%;
-    }
+  .footer-container .footer-row ul li {
+    display: block;
+    margin: 10px 0px;
+    text-align: left;
   }
 
-/* For the submit button to be responsive */
+  .footer-container .footer-row a i {
+    margin: 0% 5%;
+  }
+}
+
+/* /* For the submit button to be responsive
 
 @media (min-width: 768px) {
   .form-container {
@@ -719,5 +774,166 @@ footer {
 @media (min-width: 1024px) {
   .form-container {
     width: 50%;
+  }
+} */
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery_img_item {
+    flex: 50%;
+    max-width: 50%;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    height: auto;
+  }
+
+  .about-container {
+    padding: 50px 10%;
+  }
+
+  .info-container {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .about-image {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+
+  .about-content {
+    max-width: 100%;
+  }
+  .form-container {
+    max-width: 70%;
+  }
+
+  .form-container h2 {
+    font-size: 25px;
+  }
+
+  .form-group {
+    font-size: 25px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 6px;
+  }
+
+  .form-group button {
+    padding: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery_img_item {
+    flex: 100%;
+    max-width: 100%;
+  }
+
+  .gallery-title {
+    font-size: 60px;
+  }
+
+  .gallery-quote {
+    font-size: 18px;
+    margin: 20% 5%;
+  }
+
+  .about-container {
+    padding: 30px 5%;
+  }
+
+  .info-container {
+    padding: 20px;
+  }
+
+  .about-content h1 {
+    font-size: 40px;
+  }
+
+  .about-content h3 {
+    font-size: 24px;
+  }
+
+  .about-content p {
+    font-size: 18px;
+  }
+  .form-container {
+    max-width: 90%;
+  }
+
+  .form-container h2 {
+    font-size: 20px;
+  }
+
+  .form-group {
+    font-size: 20px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 5px;
+  }
+
+  .form-group button {
+    padding: 7px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-title {
+    font-size: 40px;
+  }
+
+  .gallery-quote {
+    font-size: 16px;
+    margin: 10% 5%;
+  }
+  .about-content h1 {
+    font-size: 30px;
+  }
+
+  .about-content h3 {
+    font-size: 20px;
+  }
+
+  .about-content p {
+    font-size: 16px;
+  }
+  .form-container {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .form-container h2 {
+    font-size: 18px;
+  }
+
+  .form-group {
+    font-size: 18px;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 4px;
+  }
+
+  .form-group button {
+    padding: 6px;
   }
 }
