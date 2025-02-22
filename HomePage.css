@@ -402,7 +402,6 @@ p {
   /* 2 images per row */
   gap: 5px;
   overflow-y: auto;
-  
   /* Enables vertical scrolling */
   height: 635px;
   /* Restrict height */
@@ -418,7 +417,7 @@ p {
 }
 
 .gallery-grid img {
-  width: 500px;
+  width: 40%;
   height: 250px;
   margin-top: 8px;
   object-fit: cover;
@@ -920,6 +919,7 @@ footer {
   }
   .gallery-grid {
     grid-template-columns: 1fr;
+    
   }
 
   .gallery_img_item {
@@ -976,6 +976,9 @@ footer {
   .form-group button {
     padding: 7px;
   }
+  .gallery-wrapper {
+    justify-content: center; /* Center the gallery */
+  }
 }
 
 @media (max-width: 480px) {
@@ -1022,5 +1025,8 @@ footer {
 
   .form-group button {
     padding: 6px;
+  }
+  .gallery-wrapper {
+    justify-content: center; /* Center the gallery */
   }
 }
