@@ -265,10 +265,10 @@ p {
   gap: 50px;
   max-width: 1200px;
   padding: 60px;
-  border: 5px solid black;
+  border: 5px solid white;
   /* Light transparent border */
   border-radius: 10px;
-  background-color: lightgray;
+  background-color: black;
   /*backdrop-filter: blur(10px);*/
   flex-wrap: wrap;
 }
@@ -278,11 +278,14 @@ p {
   max-width: 450px;
   /* Bigger image */
   margin: 20px;
+  border: white;
+  border-radius: 10px;
+
 }
 
 .about-image img {
   width: 100%;
-  border-radius: 10px;
+  border: solid white 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -296,7 +299,7 @@ p {
 .about-content h1 {
   font-size: 60px;
   font-weight: bold;
-  color: black;
+  color: white;
   margin-bottom: -20px;
 }
 
@@ -308,7 +311,7 @@ p {
 .about-content p {
   /* Changed size of font in about section*/
   font-size: 25px;
-  color: black;
+  color: white;
   line-height: 1.6;
 }
 
