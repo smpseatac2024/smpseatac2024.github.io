@@ -20,6 +20,7 @@ body {
   background: darkgray;
   overflow: auto;
   max-height: 100%;
+  
 }
 .header-row{
   grid-row: 1;
@@ -39,6 +40,7 @@ body {
 .contact-row {
   position: relative;
   z-index: 1;
+  min-height: ;
 }
 
 .contact-row::before {
@@ -439,9 +441,8 @@ p {
   display: none;
 }
 
-.contact-contaner{
-  display: grid;
-  grid-template-rows: auto auto;
+.contact-container{
+
   height: 100%;
   
 }
@@ -452,9 +453,9 @@ body .form-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   margin-left: 25%;
   margin-right: 25%;
+  width: 50%;
 }
 
 .form-container {
@@ -462,8 +463,6 @@ body .form-container {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 50%;
-  max-height: 80vh;
   overflow: auto;
   display: flex;
   flex-direction: column;
@@ -525,172 +524,109 @@ body .form-container {
   background-color: #218838;
 }
 
-.grid-calenderform-container {
-  grid-row: 2;
-  display: grid;
-  grid-template-columns: auto auto 50%;
-  grid-template-rows: auto auto 50%;
-  column-gap: 2%;
-  padding: 10px;
-  margin: auto;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  width: 88%;
-  height: 600px;
-  border-radius: 15px;
-  background-color: #f9f9f9;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-}
-
 .grid-calender-logo {
-  grid-row: 1 / span 2;
-  grid-column: 1;
+  grid-row: 1;
+  grid-column: 2;
   text-align: center;
   color: black;
+  max-width: auto;
+  
 }
 
 .grid-calender-logo img {
   border-radius: 50%;
+  max-height: 100%;
+  max-width: 75%;
+
 }
 
 .grid-calender-owner {
-  grid-row: 1 / span 2;
-  grid-column: 2;
+  grid-row: 1;
+  grid-column: 1;
   text-align: center;
 }
 
 .grid-calender-owner img {
   border-radius: 50%;
+  max-height: 100%;
+  max-width: 75%;
+  
+ 
 }
 
-.grid-calender-contact {
-  grid-row: 3;
-  grid-column: 1 / span 2;
+.form-contact {
+  grid-template-rows: auto auto auto auto;
   color: black;
   text-align: center;
 }
-
-.grid-calender-contact p {
+.form-contact p {
   font-size: 25px;
   font-weight: lighter;
 }
 
-.grid-calender-contact h3 {
+.form-contact h3 {
   font-size: 15px;
   font-weight: bolder;
 }
-
-.contact-contaner {
-  width: 50%;
+.form-contact .form-owner
+{
+  grid-row: 2; 
 }
+.form-contact .form-logo{
+  grid-row: 2;
 
-.grid-calendar-wrapper {
-  width: auto;
-  grid-row: 1 / span 3;
-  grid-column: 3;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-}
-
-.wrapper header {
-  display: flex;
-  align-items: center;
-  padding: 25px 30px 10px;
-  justify-content: space-between;
-}
-
-header .icons {
-  display: flex;
-}
-
-header .icons span {
-  height: 38px;
-  width: 38px;
-  margin: 0 1px;
-  cursor: pointer;
-  color: #878787;
-  text-align: center;
-  line-height: 38px;
-  font-size: 1.9rem;
-  user-select: none;
-  border-radius: 50%;
-}
-
-.icons span:last-child {
-  margin-right: -10px;
-}
-
-header .icons span:hover {
-  background: #f2f2f2;
-}
-
-header .current-date {
-  font-size: 1.45rem;
-  font-weight: 500;
+} 
+body {
+  font-family: Arial, sans-serif;
 }
 
 .calendar {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto auto;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  border: 1px solid #ccc;
+  background-color: white;
   padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
 }
 
-.calendar ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  text-align: center;
+.form-container {
+  width: 300px;
 }
 
-.calendar .days {
-  margin-bottom: 20px;
+.form-container input, .form-container select {
+  width: 100%;
+  margin-bottom: 15px;
 }
 
-.calendar li {
-  color: #333;
-  width: calc(100% / 7);
-  font-size: 1.07rem;
+.btn-success {
+  background-color: #28a745;
+  color: white;
+  grid-row: 2;
+  grid-column: 1 / span 2;
 }
 
-.calendar .weeks li {
-  font-weight: 500;
-  cursor: default;
+.btn-primary {
+  background-color: #007bff;
+  color: white;
 }
 
-.calendar .days li {
-  z-index: 1;
-  cursor: pointer;
-  position: relative;
-  margin-top: 30px;
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
 }
-
-.days li.inactive {
-  color: #aaa;
-}
-
-.days li.active {
-  color: #fff;
-}
-
-.days li::before {
-  position: absolute;
-  content: "";
-  left: 50%;
-  top: 50%;
-  height: 40px;
-  width: 40px;
-  z-index: -1;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.days li.active::before {
-  background: #9B59B6;
-}
-
-.days li:not(.active):hover::before {
-  background: #f2f2f2;
-}
-
 .faq-container {
   width: 80%;
   margin: auto;
