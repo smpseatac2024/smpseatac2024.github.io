@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-// handles email send from client submission of consult form
+// handles email send from client submission of infomation request form
 
 const form = document.getElementById('request-form');
 const result = document.getElementById('result');
@@ -42,6 +42,46 @@ form.addEventListener('submit', function (e) {
     const formData = new FormData(form);
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object); result.innerHTML = "Please wait..."
+    
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: json
+    })
+    .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+            result.innerHTML = json.message;
+        } else {
+            console.log(response);
+            result.innerHTML = json.message;
+        }
+    })
+    .catch(error => {
+        console.log(error);
+        result.innerHTML = "Something went wrong!";
+    })
+    .then(function () {
+        form.reset();
+        setTimeout(() => {
+            result.style.display = "none";
+        }, 3000);
+    });
+});
+
+// handles email send from client submission of consult form
+
+const formTwo = document.getElementById('consultationForm');
+const resultTwo = document.getElementById('resultTwo');
+
+formTwo.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const formData = new FormData(formTwo);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object); resultTwo.innerHTML = "Please wait..."
 
     fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -54,20 +94,20 @@ form.addEventListener('submit', function (e) {
         .then(async (response) => {
             let json = await response.json();
             if (response.status == 200) {
-                result.innerHTML = json.message;
+                resultTwo.innerHTML = json.message;
             } else {
                 console.log(response);
-                result.innerHTML = json.message;
+                resultTwo.innerHTML = json.message;
             }
         })
         .catch(error => {
             console.log(error);
-            result.innerHTML = "Something went wrong!";
+            resultTwo.innerHTML = "Something went wrong!";
         })
         .then(function () {
-            form.reset();
+            formTwo.reset();
             setTimeout(() => {
-                result.style.display = "none";
+                resultTwo.style.display = "none";
             }, 3000);
         });
 });

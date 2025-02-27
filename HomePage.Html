@@ -209,7 +209,8 @@
 		<div class="contact-container" id="contact">
 			<h1>Contact</h1>
 			<div class="form-container">
-				<form id="request-form">
+				<form id="request-form" action="https://api.web3forms.com/submit" method="POST">
+					<input type="hidden" name="apikey" value="4fe72928-295c-41c2-b509-fa021d35acac">
 					<div class="form-contact">
 						<h2>30 Min Free Consultation</h2>
 						<div class="form-owner">
@@ -277,7 +278,8 @@
 
 	<!-- Popout Form -->
 	<div id="bookingForm" class="form-popup">
-		<form id="consultationForm" class="form-container">
+		<form id="consultationForm" class="form-container" action="https://api.web3forms.com/submit" method="POST">
+			<input type="hidden" name="apikey" value="4fe72928-295c-41c2-b509-fa021d35acac">
 			<h2>Book Your Consultation</h2>
 			<label for="name"><b>Name</b></label>
 			<input type="text" placeholder="Enter your name" name="name" required>
@@ -300,6 +302,7 @@
 
 			<button type="submit" class="btn btn-primary">Submit</button>
 			<button type="button" class="btn btn-danger" id="closeForm">Close</button>
+			<div id="resultTwo"></div>
 		</form>
 	</div>
 	<div class="footer-row-row">
