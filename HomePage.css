@@ -525,10 +525,10 @@ body .form-container {
 
 .grid-calender-logo {
   grid-row: 1;
-  grid-column: 2;
-  text-align: center;
+  text-align: right;
   color: black;
   max-width: auto;
+ 
   
 }
 
@@ -536,7 +536,7 @@ body .form-container {
   border-radius: 50%;
   max-height: 100%;
   max-width: 75%;
-
+  
 }
 
 .grid-calender-owner {
@@ -582,7 +582,7 @@ body {
 .calendar {
   display: grid;
   grid-template-rows: auto auto;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto ;
   position: fixed;
   bottom: 20px;
   right: 20px;
