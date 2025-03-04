@@ -477,8 +477,6 @@ p {
 .contact-info{
   grid-row: 3;
   grid-column: 1 / span 2;
-  margin-left: 20%;
-  margin-right: 20%;
 }
 
 .form-contact {
@@ -494,6 +492,7 @@ p {
   color: black;
   text-align: left;
   margin-left: 15%; 
+  margin: 5%;
   padding-left: 5%;
 
 }
