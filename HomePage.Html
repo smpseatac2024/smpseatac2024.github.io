@@ -262,12 +262,12 @@
 						<select id="service" name="service" required>
 							<option value="">Select a service</option>
 							<option value="scalp micropigmentation">Scalp Micropigmentation</option>
-							<option value="brows">Brows</option>
+							<option value="brows">Eye Brows</option>
 						</select>
 
-						<label for="visitType">Visit Type</label>
-						<select id="visit" name="visitType" required>
-							<option value="">Select a Visit</option>
+						<label for="contact-pref">Contact Preference</label>
+						<select id="contact-pref" name="contact-pref" required>
+							<option value="">Select preferred method of contact</option>
 							<option value="email">E-Mail</option>
 							<option value="call">Call</option>
 							<option value="text">Text</option>
@@ -291,10 +291,6 @@
 
 	<!-- Consultation Booking Calendar -->
 	<div id="bookingCalendar" class="calendar">
-		<!--<div class="grid-calender-owner">-->
-			<!--Modified link-->
-			<!--<img src=".\Images\Client_Image_2.jpg" width="200" height="200">
-		</div>--> 
 
 		<div class="grid-calender-logo">
 			<!--Modified link-->
@@ -305,30 +301,46 @@
 
 	<!-- Popout Form -->
 	<div id="bookingForm" class="form-popup">
-		<form id="consultationForm" class="form-container" action="https://api.web3forms.com/submit" method="POST">
+		<form id="consultation-Form" class="consultation-Form" action="https://api.web3forms.com/submit" method="POST">
 			<input type="hidden" name="apikey" value="4fe72928-295c-41c2-b509-fa021d35acac">
 			<h2>Book Your Consultation</h2>
-			<label for="name"><b>Name</b></label>
-			<input type="text" placeholder="Enter your name" name="name" required>
+			<label for="name">Name</label>
+			<input type="text" placeholder="Enter Full name" name="name" required>
 
-			<label for="email"><b>Email</b></label>
+			<label for="email">Email</label>
 			<input type="email" placeholder="Enter your email" name="email" required>
 
-			<label for="date"><b>Select Date</b></label>
+			<label for="phone">Phone Number</label>
+			<input type="tel" placeholder="Enter your phone number" name="phone" required>
+
+			<label for="visit-preference">Preferred Visit Method</label>
+			<select name="visit-preference" required>
+				<option value="">Select Visit Method</option>
+				<option value="in-person">In-Person</option>
+				<option value="virtual">Virtual</option>
+			</select>
+			<label for="date">Select Date</label>
 			<input type="date" name="date" required>
 
-			<label for="time"><b>Select Time</b></label>
+			<label for="time">Select Time</label>
 			<select name="time" required>
 				<option value="">Select Time</option>
 				<option value="09:00">09:00 AM</option>
+				<option value="09:30">09:30 AM</option>
 				<option value="10:00">10:00 AM</option>
+				<option value="10:30">10:30 AM</option>
 				<option value="11:00">11:00 AM</option>
-				<option value="11:00">12:00 PM</option>
-				<option value="11:00">01:00 pM</option>
-				<option value="14:00">02:00 PM</option>
-				<option value="15:00">03:00 PM</option>
-				<option value="11:00">04:00 PM</option>
-				<option value="11:00">05:00 PM</option>
+				<option value="11:30">11:30 PM</option>
+				<option value="12:00">12:00 PM</option>
+				<option value="12:30">12:30 PM</option>
+				<option value="1:00">01:00 PM</option>
+				<option value="1:30">01:30 PM</option>
+				<option value="2:00">02:00 PM</option>
+				<option value="2:30">02:30 PM</option>
+				<option value="3:00">03:00 PM</option>
+				<option value="3:30">03:30 PM</option>
+				<option value="4:00">04:00 PM</option>
+				<option value="4:30">04:30 PM</option>
 			</select>
 
 			<button type="submit" class="btn btn-primary">Submit</button>
