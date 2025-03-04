@@ -74,7 +74,7 @@ form.addEventListener('submit', function (e) {
 
 // handles email send from client submission of consult form
 
-const formTwo = document.getElementById('consultationForm');
+const formTwo = document.getElementById('consultation-Form');
 const resultTwo = document.getElementById('resultTwo');
 
 formTwo.addEventListener('submit', function (e) {
@@ -111,13 +111,3 @@ formTwo.addEventListener('submit', function (e) {
             }, 3000);
         });
 });
-// Hamburger Icon
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const menuItems = document.querySelector('.menuItems');
-  
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      menuItems.classList.toggle('active');
-    });
-  });
