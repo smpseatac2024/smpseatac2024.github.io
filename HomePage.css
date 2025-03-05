@@ -724,6 +724,38 @@ footer {
   color: white;
   transition: 0.5s;
 }
+.footer-closing {
+  width: 100%;
+}
+.footer-closing h3 {
+  color: white;
+  font-size: 10px;
+  text-align: center;
+}
+.footer-closing h4 {
+  color: white;
+  font-size: 10px;
+  text-align: center;
+}
+.footer-closing ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+.footer-closing ul li {
+  margin: 0 10px;
+} 
+.footer-closing ul li a {
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.footer-closing ul li a:hover {
+  color: plum;
+}
 
 .footer-container .footer-row a:hover {
   color: plum;
