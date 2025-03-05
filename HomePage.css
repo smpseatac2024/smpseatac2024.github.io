@@ -27,7 +27,7 @@ body {
 }
 .about-row{
   grid-row: 2;
-  background-color: #8254ff;
+  background-color: plum;
 }
 .gallery-row{
   grid-row: 3;
@@ -122,29 +122,26 @@ div {
 
 .nav-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   width: 100%;
 }
 
-nav {
-  background: none;
-  padding: 0;
-}
 .menuItems {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 50px;
 }
 
 .menuItems li {
-  margin: 0;
+  margin-left: 5%;
+  padding-left: 5%;
 }
 
 .menuItems li a {
   text-decoration: none;
   color: white;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 400;
   transition: all 0.5s ease-in-out;
   position: relative;
@@ -154,7 +151,7 @@ nav {
     .menuItems li a::before {
         content: attr(data-item);
         transition: 0.5s;
-        color: #8254ff;
+        color: plum;
         position: absolute;
         top: 0;
         bottom: 0;
@@ -169,45 +166,37 @@ nav {
   transition: all 0.5s ease-in-out;
 }
 
-.banner {
+.banner-row {
   position: relative;
-  width: 100%;
-  max-height: 800px;
-  overflow: hidden;
-  padding: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  height: 800px;
+  width: 100%;
 }
+.banner-Title {
+  width: 100%;
+  color: white;
+  max-height: 800px;
+ 
+}
+.banner-Title h1{
+  font-size: 100px;
+  font-weight: bolder;
+  color: white;
+  text-align: center;
 
-.banner .overlay {
+}
+.banner-Title img{
   position: absolute;
   top: 0;
   left: 0;
+  margin: 0%;
+  height: 800px; 
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-}
-
-.banner-content h1 {
-  position: absolute;
-  top: 40%;
-  color: white;
-  font-size: 100px;
-  font-weight: bold;
-  z-index: 2;
-}
-
-.banner img {
-  width: 100%;
-  height: auto;
-  max-height: 800px;
+  z-index: -1;
   object-fit: cover;
-  /* Ensures the image covers the full section */
-  object-position: center;
-  /* Centers the image */
-  padding: 0;
-
+  align-items: center;
+  filter: brightness(50%);
 }
 
 img {
@@ -282,7 +271,7 @@ p {
   font-size: 60px;
   font-weight: bold;
   color: white;
-  margin-bottom: -20px;
+  margin-bottom: 2%;
 }
 
 .about-content h3 {
@@ -604,9 +593,10 @@ p {
 }
 .grid-calender-logo {
   grid-row: 1;
-  text-align: right;
   color: black;
-  max-width: auto;
+  width: 100%;
+  margin-left: 25%;
+  margin-right: 25%;
  
   
 }
@@ -615,6 +605,7 @@ p {
   border-radius: 50%;
   max-height: 100%;
   max-width: 75%;
+  
   
 }
 .consultation-Form {
@@ -673,7 +664,7 @@ body {
   margin-bottom: 15px;
 }
 
-.btn-success {
+.calendar .btn-success {
   background-color: #28a745;
   color: white;
   grid-row: 2;
@@ -717,7 +708,7 @@ footer {
 }
 
 .footer-socialmedia-row a:hover {
-  color: #8254ff;
+  color: plum;
 }
 
 .footer-container .footer-row {
@@ -735,7 +726,7 @@ footer {
 }
 
 .footer-container .footer-row a:hover {
-  color: #8254ff;
+  color: plum;
 }
 
 .footer-container .footer-row ul {
@@ -785,6 +776,9 @@ footer {
 
 /* Media queries for responsiveness */
 @media (max-width: 1200px) {
+  .menuItems li a {
+    font-size: 20px;
+  }
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -863,22 +857,6 @@ footer {
     font-size: 20px;
   }
 
-  .hamburger {
-    display: flex;
-  }
-
-  .hamburger.active .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-
-  .hamburger.active .line2 {
-    opacity: 0;
-  }
-
-  .hamburger.active .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-  }
-
   .menuItems.active {
     display: flex;
   }
@@ -949,6 +927,9 @@ footer {
 @media (max-width: 480px) {
   .banner-content h1 {
     font-size: 40px;
+  }
+  .menuItems li a {
+    font-size: 20px;
   }
   .gallery-title {
     font-size: 40px;
