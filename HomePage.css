@@ -583,7 +583,7 @@ input:checked + .slider:before {
 .banner_Section {
     position: relative;
     height: 500px; /* Adjust height as needed */
-    background-image: url('images/SMP_banner.jpg'); /* Add your banner image path here */
+    background-image: url('./Images/SMP_banner.jpg'); /* Add your banner image path here */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
