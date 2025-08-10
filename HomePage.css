@@ -1632,3 +1632,26 @@ img, .form_Logo img, .form_Owner img {
         cursor: pointer;
         user-select: none;
     }
+.footer-developer {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-developer p {
+    margin: 0;
+}
+
+.footer-developer a {
+    color: var(--dusty-rose);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.footer-developer a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
