@@ -15,164 +15,23 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
-    const dateInput = document.getElementById('date');
-    const durationInput = document.getElementById('duration');
-    const appointmentFormElement = dateInput?.form;
-
-    if (dateInput) {
-        dateInput.addEventListener('change', validateDateTime);
-    }
-    if (appointmentFormElement) {
-        appointmentFormElement.addEventListener('submit', function (e) {
-            if (!validateDateTime()) {
-                e.preventDefault();
-            }
-        });
-    }
-
-    // --- Duplicate Email Check for New Client Form ---
-    $(function () {
-        // Main new client form
-        $('#Email').on('blur', function () {
-            var email = $(this).val();
-            if (email) {
-                $.get('/Clients/IsEmailAvailable', { email: email }, function (data) {
-                    if (!data.isAvailable) {
-                        if ($('#email-error').length === 0) {
-                            $('<span id="email-error" class="text-danger">This email is already registered.</span>')
-                                .insertAfter('#Email');
-                        }
-                    } else {
-                        $('#email-error').remove();
-                    }
-                });
-            } else {
-                $('#email-error').remove();
-            }
-        });
-
-        $('#newClientForm').on('submit', function (e) {
-            if ($('#email-error').length > 0) {
-                e.preventDefault();
-                // Use native focus method to avoid deprecated jQuery focus
-                document.getElementById('Email')?.focus();
-            }
-        });
-
-        // Booking (modal) consultation form
-        $('#bookingFormFloat #Email').on('blur', function () {
-            var email = $(this).val();
-            if (email) {
-                $.get('/Clients/IsEmailAvailable', { email: email }, function (data) {
-                    if (!data.isAvailable) {
-                        $('#booking-email-error').remove();
-                        $('<span id="booking-email-error" class="text-danger">This email is already registered. Please contact Jenny at 206-307-0755 or SMPINKSEATAC@GMAIL.COM.</span>')
-                            .insertAfter('#bookingFormFloat #Email');
-                    } else {
-                        $('#booking-email-error').remove();
-                    }
-                });
-            } else {
-                $('#booking-email-error').remove();
-            }
-        });
-
-        $('#bookingFormFloat form').on('submit', function (e) {
-            if ($('#booking-email-error').length > 0) {
-                e.preventDefault();
-                // Use native focus method to avoid deprecated jQuery focus
-                document.querySelector('#bookingFormFloat #Email')?.focus();
-            }
-        });
-    });
-
-    // --- Booking Form Popout Modal ---
-    var btn = document.querySelector('.booking-float-btn');
-    var bookinModalForm = document.getElementById('bookingFormFloat');
-    var close = document.getElementById('closeBookingFormBtn');
-
-    // Hide modal by default (in case it's visible from previous state)
-    if (bookinModalForm) {
-        bookinModalForm.classList.remove('active');
-        bookinModalForm.style.display = 'none';
-    }
-
-    // Show modal on button click
-    if (btn && bookinModalForm) {
-        btn.addEventListener('click', function () {
-            bookinModalForm.classList.add('active');
-            bookinModalForm.style.display = 'block';
-            document.body.classList.add('booking-modal-open');
-        });
-    }
-
-    // Close modal on close icon click
-    if (close && bookinModalForm) {
-        close.addEventListener('click', function () {
-            bookinModalForm.classList.remove('active');
-            bookinModalForm.style.display = 'none';
-            document.body.classList.remove('booking-modal-open');
-        });
-    }
-
-    // Optional: close modal when clicking outside the form content
-    if (bookinModalForm) {
-        bookinModalForm.addEventListener('click', function (e) {
-            if (e.target === bookinModalForm) {
-                bookinModalForm.classList.remove('active');
-                bookinModalForm.style.display = 'none';
-                document.body.classList.remove('booking-modal-open');
-            }
-        });
-    }
-    function validateDateTime() {
-        if (!dateInput) return true;
-        const dt = new Date(dateInput.value);
-        if (isNaN(dt)) return true; // Let HTML5 handle empty/invalid
-
-        // Only Monday-Friday
-        if (dt.getDay() === 0 || dt.getDay() === 6) {
-            alert('Appointments can only be scheduled Monday through Friday.');
-            dateInput.value = '';
-            return false;
-        }
-
-        // Only 9am-5pm
-        const hour = dt.getHours();
-        const minute = dt.getMinutes();
-        if (hour < 9 || hour > 16 || (hour === 16 && durationInput.value === "60")) {
-            alert('Appointments must start between 9:00 AM and 4:30 PM (for 30 min) or 4:00 PM (for 1 hour).');
-            dateInput.value = '';
-            return false;
-        }
-        if (hour === 16 && durationInput.value === "30" && minute > 30) {
-            alert('Last 30-minute appointment must start by 4:30 PM.');
-            dateInput.value = '';
-            return false;
-        }
-        if (hour === 17 || hour > 17) {
-            alert('Appointments must end by 5:00 PM.');
-            dateInput.value = '';
-            return false;
-        }
-        return true;
-    }
 
     // --- Contact Form Toggle ---
     function toggleClientForm() {
         var isNew = document.getElementById('newClient').checked;
-        document.getElementById('newClientForm').style.display = isNew ? 'block' : 'none';
-        document.getElementById('verification-step').style.display = isNew ? 'none' : 'block';
-        document.getElementById('code-step').style.display = 'none';
-        document.getElementById('appointment-step').style.display = 'none';
+        var newForm = document.getElementById('newClientForm');
+        var existingForm = document.querySelector('.existing-client-form');
+        
+        if (newForm) newForm.style.display = isNew ? 'block' : 'none';
+        if (existingForm) existingForm.style.display = isNew ? 'none' : 'block';
     }
 
     // Set initial state for contact forms
-    toggleClientForm();
-
-    // Attach event listeners for radio buttons
-    document.getElementById('newClient').addEventListener('change', toggleClientForm);
-    document.getElementById('existingClient').addEventListener('change', toggleClientForm);
+    if (document.getElementById('newClient')) {
+        toggleClientForm();
+        document.getElementById('newClient').addEventListener('change', toggleClientForm);
+        document.getElementById('existingClient').addEventListener('change', toggleClientForm);
+    }
 
     // --- Text Size Toggle ---
     const switchInput = document.getElementById('toggleTextSizeSwitch');
@@ -197,96 +56,43 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // --- Existing Client Verification Flow ---
+    // --- Booking Form Modal ---
+    var btn = document.querySelector('.booking-float-btn');
+    var bookingModalForm = document.getElementById('bookingFormFloat');
+    var close = document.getElementById('closeBookingFormBtn');
 
-    // Step 1: Request Verification Code
-    const verifyRequestForm = document.getElementById('verify-request-form');
-    if (verifyRequestForm) {
-        verifyRequestForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const btn = this.querySelector('button[type="submit"]');
-            btn.disabled = true; // Disable button to prevent double submit
+    if (bookingModalForm) {
+        bookingModalForm.classList.remove('active');
+        bookingModalForm.style.display = 'none';
+    }
 
-            const data = {
-                email: this.email.value,
-                phoneNumber: this.phoneNumber.value
-            };
-            fetch('/Clients/AjaxRequestVerification', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            })
-                .then(r => r.json())
-                .then(res => {
-                    btn.disabled = false; // Re-enable button
-                    if (res.success) {
-                        document.getElementById('verification-step').style.display = 'none';
-                        document.getElementById('code-step').style.display = 'block';
-                        document.querySelector('#verify-code-form [name="email"]').value = data.email;
-                        document.querySelector('#verify-code-form [name="phoneNumber"]').value = data.phoneNumber;
-                    } else {
-                        alert(res.message);
-                    }
-                })
-                .catch(() => { btn.disabled = false; });
+    if (btn && bookingModalForm) {
+        btn.addEventListener('click', function () {
+            bookingModalForm.classList.add('active');
+            bookingModalForm.style.display = 'block';
+            document.body.classList.add('booking-modal-open');
         });
     }
 
-    // Step 2: Verify Code
-    const verifyCodeForm = document.getElementById('verify-code-form');
-    if (verifyCodeForm) {
-        verifyCodeForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const data = {
-                email: this.email.value,
-                phoneNumber: this.phoneNumber.value,
-                verificationCode: this.verificationCode.value
-            };
-            fetch('/Clients/AjaxVerifyCode', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            })
-                .then(r => r.json())
-                .then(res => {
-                    if (res.success) {
-                        document.getElementById('code-step').style.display = 'none';
-                        document.getElementById('appointment-step').style.display = 'block';
-                        document.querySelector('#appointment-form [name="email"]').value = data.email;
-                    } else {
-                        alert(res.message);
-                    }
-                });
+    if (close && bookingModalForm) {
+        close.addEventListener('click', function () {
+            bookingModalForm.classList.remove('active');
+            bookingModalForm.style.display = 'none';
+            document.body.classList.remove('booking-modal-open');
         });
     }
 
-    // Step 3: Schedule Appointment
-    const appointmentForm = document.getElementById('appointment-form');
-    if (appointmentForm) {
-        appointmentForm.addEventListener('submit', function (e) {
-            e.preventDefault();
-            const data = {
-                email: this.email.value,
-                appointmentType: this.appointmentType.value,
-                appointmentDate: this.appointmentDate.value
-            };
-            fetch('/Clients/AjaxAddAppointmentForExistingClient', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            })
-                .then(r => r.json())
-                .then(res => {
-                    if (res.success) {
-                        alert(res.message);
-                        // Optionally reset or hide the form
-                    } else {
-                        alert(res.message);
-                    }
-                });
+    if (bookingModalForm) {
+        bookingModalForm.addEventListener('click', function (e) {
+            if (e.target === bookingModalForm) {
+                bookingModalForm.classList.remove('active');
+                bookingModalForm.style.display = 'none';
+                document.body.classList.remove('booking-modal-open');
+            }
         });
     }
 
+    // --- Gallery Lightbox ---
     document.querySelectorAll('.gallery-img').forEach(img => {
         img.addEventListener('click', function () {
             openLightbox(this.src, this.getAttribute('data-caption'));
@@ -297,13 +103,20 @@ document.addEventListener('DOMContentLoaded', function () {
         const lightbox = document.getElementById("lightbox");
         const lightboxImg = document.getElementById("lightbox-img");
         const lightboxCaption = document.getElementById("lightbox-caption");
-        lightbox.style.display = "flex";
-        lightboxImg.src = imgUrl;
-        lightboxCaption.textContent = caption || "";
+        if (lightbox && lightboxImg) {
+            lightbox.style.display = "flex";
+            lightboxImg.src = imgUrl;
+            if (lightboxCaption) {
+                lightboxCaption.textContent = caption || "";
+            }
+        }
     };
 
     window.closeLightbox = function () {
-        document.getElementById("lightbox").style.display = "none";
+        const lightbox = document.getElementById("lightbox");
+        if (lightbox) {
+            lightbox.style.display = "none";
+        }
     };
 
     const lightbox = document.getElementById("lightbox");
@@ -314,37 +127,25 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+
     const lightboxClose = document.getElementById("lightbox-close");
     if (lightboxClose) {
         lightboxClose.addEventListener("click", function (e) {
-            e.stopPropagation(); // Prevent closing by overlay click
+            e.stopPropagation();
             closeLightbox();
         });
     }
 
-    // --- Step 4 & 5: Show alerts and reopen modal if needed ---
-    var alertDiv = document.getElementById('form-alert');
-    if (alertDiv) {
-        var message = alertDiv.getAttribute('data-message');
-        var error = alertDiv.getAttribute('data-error');
-        var source = alertDiv.getAttribute('data-source');
-
-        if (message) {
-            alert(message);
-        }
-        if (error) {
-            alert(error);
-        }
-
-        // If the booking modal was used, reopen it so the user sees the alert
-        if ((message || error) && source === "booking") {
-            var bookinModalForm = document.getElementById('bookingFormFloat');
-            if (bookinModalForm) {
-                bookinModalForm.classList.add('active');
-                bookinModalForm.style.display = 'block';
-                document.body.classList.add('booking-modal-open');
-            }
-        }
-    }
-
+    // --- Static Form Handlers ---
+    // Since we're on GitHub Pages, we need to use a third-party form service
+    // Options: Formspree, Netlify Forms, Google Forms, etc.
+    
+    // Example with mailto (basic solution):
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('To submit this form, please contact us at:\nPhone: 206-307-0755\nEmail: SMPINKSEATAC@GMAIL.COM');
+        });
+    });
 });
