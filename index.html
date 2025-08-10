@@ -2,396 +2,485 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="HomePage.css">
-	<title>SMP Seatac</title>
-
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-	<!-- Google Font Link for Icons -->
-	<link rel="stylesheet"
-		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
-	<!--FONT AWESOME-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-	<!--GOOGLE FONTS-->
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet">
-	<!--Scripts-->
-	<script src="HomePage.js" defer></script>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>SMP Seatac - Mobile Scalp Micropigmentation</title>
+	<meta name="description"
+		content="Mobile Scalp Micropigmentation in The Greater Seatac Area. Natural, confidence-boosting results from a licensed SMP artist.">
+	<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "SMP Seatac",
+        "description": "Scalp Micropigmentation services in Seatac, WA. Licensed SMP artist.",
+        "url": "https://smpseatac.com/",
+        "telephone": "206-304-0755",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Seattle Tacoma",
+            "addressRegion": "WA",
+            "addressCountry": "US"
+        }
+    }
+    </script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="site.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
 
 <body>
-	<div class="header-row">
-		<header class="header">
-			<div class="logo">
-				<img src="./Images/ClientLogo.jpg" alt="SMP Seatac Logo">
-			</div>
-
-			<div class="nav-container">
-				<nav>
-					<ul class="menuItems">
-						<li><a href="#about" data-item="About">About</a></li>
-						<li><a href="#gallery" data-item="Gallery">Gallery</a></li>
-						<li><a href="#faq" data-item="FAQ">FAQ</a></li>
-						<li><a href="#contact" data-item="Contact">Contact</a></li>
-					</ul>
-				</nav>
-			</div>
-		</header>
-		<div class="banner-row">
-			<div class="banner-Title">
-				<h1>WELCOME TO SMP SEATAC</h1>
-				<img src="./Images/SMP_banner.jpg" alt="SMP Banner image">
-			</div>
-		</div>
-	</div>
-	<div class="about-row">
-
-		<div class="about-container" id="about">
-			<div class="info-container">
-				<div class="about-image">
-					<img src="./Images/Client_Image_1.jpg" alt="About Image">
+	<header>
+		<div class="header_Container">
+			<a href="#home_body">
+				<div class="logo_Container">
+					<img src="images/ClientLogo.jpg" alt="Logo" />
+					<span class="brand-title">SMP Seatac</span>
 				</div>
-				<div class="about-content">
-					<h1>ABOUT US</h1>
+			</a>
+			<nav>
+				<ul class="menu_Items">
+					<li><a href="#about-section">About</a></li>
+					<li><a href="#gallery_Section">Gallery</a></li>
+					<li><a href="#faq_Section">FAQ</a></li>
+					<li><a href="#contact_Section">Contact</a></li>
+				</ul>
+			</nav>
+			<div class="text-size-toggle-container">
+				<label class="switch">
 
-					<p>
-						I'm a licensed and practicing SMP Artist since October 2024.
-						I was trained by the best SMP School in Washington, SMP INK Seattle.
-						SMP SeaTac is a mobile business which services clients within the Greater Seatac area; 
-						We provide an altenative soution for those experiecing hair loss
-						helping individuals with thinning hair, alopecia, and or a receding hairline.
-						SMP can also be used to camouflage scar, and enhance other features such as lips and eyebrow.
-						Our process of getting started is a simple one. We arrange a personalized consultations to gain 
-						clarity and understanding of the desired outcome warranted by the clients. After which, a series 
-						appiontments are followed through until the desired results of a natural look is achieved.
-						Our key focus' are personalized consultations and quality outcomes.
-						<br><br>
-						To learn more about scalp micropigmentation or to schedule your free consultation, contact us
-						today!
-					</p>
-					<p>Name : Jenny Caldona</p>
-					<p>Title : SMP Technician</p>
-					<p>Phone : 206-307-0755</p>
-					<p>Email : SMPINKSEATAC@GMAIL.COM</p>
-
-					
-					<p>
-						Social : <a href="https://www.instagram.com/smp_seatac/?igsh=MW4xNDEwOGM0b3c4dg%3D%3D#" target="_blank">
-							<i class="fa fa-instagram"></i>
-							</a>
-					</p>
-					
-				</div>
+					<span class="slider"></span>
+				</label>
+				<span class="toggle-label">Large Text</span>
 			</div>
 		</div>
-	</div>
-	<div class="gallery-row">
+	</header>
 
-		<div class="gallery-container" id="gallery">
-			<div class="gallery-title-container">
-				<h1 class="gallery-title"> OUR GALLERY</h1>
-				<p class="gallery-quote">"Beauty begins the moment you decide to be yourself."</p>
-			</div>
-			<div class="gallery-wrapper">
-				<div class="gallery-grid">
-					<div class="gallery-img-item">
-						<img src="./Images/SMP_Image_4.jpg" alt="smp work 1">
-						<img src="./Images/SMP_Image_3.jpg" alt="smp work 2">
+	<div class="content_container">
+		<main role="main" class="main_container backend-main">
+			<div id="home_body" class="home_Body">
 
-						<img src="./Images/beforeMale.jpg" alt="sample work 3">
-
-						<img src="./Images/afterMale.jpg" alt="sample work 4">
-
-						<img src="./Images/beforeAndAfter3.jpg" height="400" alt="sample work 5">
-
-						<img src="./Images/BeforeAfter_Image_1.jpg" alt="sample work 6">
-
-						<img src="./Images/SMP_Image_1.jpg" alt="smp work 7">
-						<img src="./Images/SMP_Image_2.jpg" alt="smp work 8">
-
-						<img src="./Images/before7.jpg" alt="smp work 9">
-						<img src="./Images/After7.jpg" alt="smp work 10">
-
-						<img src="./Images/before4.jpg" alt="smp work 11">
-						<img src="./Images/After4.jpg" alt="smp work 12">
-
-
-						<img src="./Images/before5.jpg" alt="smp work 13">
-						<img src="./Images/After5.jpg" alt="smp work 14">
-
-
-						<img src="./Images/before6.jpg" alt="smp work 15">
-						<img src="./Images/After6.jpg" alt="smp work 16">
-
-					</div>
-
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="faq-row">
-
-		<div class="faq-container" id="faq">
-			<div class="faq-frame">
-
-				<h1>FAQ</h1>
-				<div class="faq">
-					<button class="faq-question">What is Scalp Micropigmentation? <span
-							class="arrow">&#x25BA;</span></button>
-					<div class="faq-answer">
-						<p>
-							Scalp Micropigmentation or SMP is a specialized form of cosmetic tattoo. The SMP
-							impressions
-							give
-							the appearance of short hair stubbles. Achieving the look of a full head of hair after a
-							close
-							buzz
-							or shave!
+				<section class="banner_Section">
+					<div class="banner_overlay"></div>
+					<div class="banner_content">
+						<h1>WELCOME TO SMP SEATAC</h1>
+						<p class="banner_subtitle">
+							Natural, confidence-boosting results from a licensed SMP artist serving the Greater Seatac
+							area.
 						</p>
+						<a href="#contact_Section" class="btn btn-primary banner_cta">Book Your Free Consultation</a>
 					</div>
+				</section>
 
-				</div>
-				<div class="faq">
-					<button class="faq-question">Does scalp mircopigmentation hurt?<span
-							class="arrow">&#x25BA;</span></button>
-					<div class="faq-answer">
-						<p>
-							It varies from customer to customer. Everyone's pain tolerance is different and pain levels can range from 0 to 6.
-							Various parts of the head can have a different pain threshold.
-							The majority of my clients fall asleep during the process.
-						</p>
-					</div>
-				</div>
-
-				<div class="faq">
-					<button class="faq-question">
-						What does the schedule of the sessions look like?<span class="arrow">&#x25BA;</span>
-					</button>
-					<div class="faq-answer">
-						<p>
-							The SMP session typically takes 4 or more sessions. 
-							We space the sessions a week apart to ensure the scalp has time to heal for the next session
-						</p>
-					</div>
-				</div>
-
-				<div class="faq">
-					<button class="faq-question">How long does scalp micropigmentation last?<span class="arrow">&#x25BA;</span></button>
-					<div class="faq-answer">
-						<p>
-							An estimate of up to 4 to 5 years, it can get lighter
-							and lighter by the year. This can be managed with a touchup session every 2 to 3 years.
-						</p>
-					</div>
-				</div>
-
-				<div class="faq">
-					<button class="faq-question">
-						What are the DO's and DONT's right after scalp micropigmentation?<span class="arrow">&#x25BA;</span>
-					</button>
-					<div class="faq-answer">
-						<p>
-							Its best to avoid extended sun exposure, shaving, soaking
-							it in sweat, and anything that would graze or cause friction
-							to the treated area for a week after each session. For optimal
-							SMP retention, its recommended to follow a simple aftercare routine
-							1-week post-session.
-						</p>
-					</div>
-				</div>
-
-				<div class="faq">
-					<button class="faq-question">How much does scalp micropigmentation cost?<span class="arrow">&#x25BA;</span></button>
-					<div class="faq-answer">
-						<p>Rates can vary depening on the procedure. Contact me for information.
-						</p>
-					</div>
-				</div>
-
-				<div class="faq">
-					<button class="faq-question">Where are you located?<span class="arrow">&#x25BA;</span></button>
-					<div class="faq-answer">
-						<p>We are a mobile business servicing clients around the Greater SeaTac area.</p>
-					</div>
-				</div>
-
-				<div class="faq">
-					<button class="faq-question">How can I contact you?<span class="arrow">&#x25BA;</span></button>
-					<div class="faq-answer">
-						<p>
-							Feel free to contact me via email at SMPINKSEATAC@GMAIL.COM,
-							text (206)-304-0755, or DM on Instagram @SMP_SEATAC
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	</div>
-	<div class="contact-row">
-
-		<div class="contact-container" id="contact">
-			<div id="form-container" class="form-container">
-				<form id="request-form" action="https://api.web3forms.com/submit" method="POST">
-					<input type="hidden" name="apikey" value="4b1d784c-ac87-45c5-8fdc-bbe744ca79b7">
-					<div class="form-contact">
-						<div id="form-title" class="form-title">
-						<h2>Book Your Free 30 Min Consultation</h2>
+				<section id="about-section" class="about-section">
+					<div class="about-container">
+						<div class="about-image">
+							<img src="images/Client_Image_1.jpg" alt="About SMP Seatac" />
 						</div>
-						<div id="form-logo" class="form-logo">
-							<!--Modified link-->
-							<img src=".\Images\ClientLogo.jpg" width="200" height="200">
-						</div>
-						<div id="form-owner" class="form-owner">
-							<!--Modified link-->
-							<img src=".\Images\Client_Image_2.jpg" width="200" height="200">
-						</div>
-						<div id="contact-info" class="contact-info">
-							<h2>Have any questions? Feel free to contact us, or submit the form below.</h2>
+						<div class="about-info">
+							<h2>About SMP Seatac</h2>
+							<p>
+								At SMP Seatac, we blend artistry and expertise to deliver natural, confidence-boosting
+								results. Our team is dedicated to providing a welcoming, professional experience for
+								every client.
+							</p>
+							<p>
+								Discover the difference that passion and precision can make in your journey.
+							</p>
+							<p>
+								I'm a licensed and practicing SMP Artist since October 2024.
+								I was trained by the best SMP School in Washington, SMP INK Seattle.
+								SMP SeaTac is a mobile business which services clients within the Greater Seatac area,
+								but we welcome from all over.
+								Here at SMP SeaTac provide an alternative solution for those experiencing hair loss,
+								helping individuals with thinning hair, alopecia, and or a receding hairline.
+								I also provide service for camouflage scars as well.
+								Our process of getting started is a simple one. We arrange a personalized consultations
+								to gain clarity and understanding of the desired outcome warranted by the clients. After
+								which,
+								a series appointments are followed through until the desired results of a natural look
+								is
+								achieved.
+								My key focus is customer comfort and satisfaction, so I designed my process to be
+								centered around you!
+								<br><br>
+								To learn more about scalp micropigmentation or to schedule your free consultation,
+								contact us today!
+							</p>
+							<p>Name : Jenny Caldona</p>
+							<p>Title : SMP Technician</p>
+							<p>Phone : 206-304-0755</p>
+							<p>Email : SMPINKSEATAC@GMAIL.COM</p>
+							<p>Social:</p>
+							<p class="social-box">
+								<a href="https://www.instagram.com/smp_seatac/" target="_blank" rel="noopener">
+									<span class="social-icon">
+										<img src="images/Instagram-Logo.wine.svg" alt="Instagram">
+									</span>
+								</a>
+							</p>
 						</div>
 					</div>
-					<div class="form-group">
-						<label for="first-name">First Name</label>
-						<input type="text" id="first-name" name="first-name" required>
+				</section>
 
-						<label for="last-name">Last Name</label>
-						<input type="text" id="last-name" name="last-name" required>
+				<section class="gallery-section" id="gallery_Section">
+					<h2 class="gallery-title">Our Gallery</h2>
+					<div class="gallery-grid">
+						<!-- Gallery images -->
+						<div class="gallery-card">
+							<div class="gallery-img-wrapper">
+								<img src="images/SMP_Image_4.jpg" alt="SMP Treatment" class="gallery-img"
+									data-caption="SMP Treatment Result" />
+								<div class="gallery-hover-overlay">
+									<span class="gallery-zoom-icon">&#128269;</span>
+								</div>
+							</div>
+							<div class="gallery-caption">SMP Treatment Result</div>
+						</div>
 
-						<label for="email">Email</label>
-						<input type="email" id="email" name="email" required>
+						<div class="gallery-card">
+							<div class="gallery-img-wrapper">
+								<img src="images/SMP_Image_3.jpg" alt="SMP Treatment" class="gallery-img"
+									data-caption="SMP Treatment Result" />
+								<div class="gallery-hover-overlay">
+									<span class="gallery-zoom-icon">&#128269;</span>
+								</div>
+							</div>
+							<div class="gallery-caption">SMP Treatment Result</div>
+						</div>
 
-						<label for="phone">Phone Number</label>
-						<input type="tel" id="phone" name="phone" required>
+						<div class="gallery-card">
+							<div class="gallery-img-wrapper">
+								<img src="images/beforeMale.jpg" alt="Before Treatment" class="gallery-img"
+									data-caption="Before Treatment" />
+								<div class="gallery-hover-overlay">
+									<span class="gallery-zoom-icon">&#128269;</span>
+								</div>
+							</div>
+							<div class="gallery-caption">Before Treatment</div>
+						</div>
 
-						<label for="service">Service</label>
-						<select id="service" name="service" required>
-							<option value="">Select a service</option>
-							<option value="scalp micropigmentation">Scalp Micropigmentation</option>
-							<option value="brows">Eye Brows</option>
-						</select>
+						<div class="gallery-card">
+							<div class="gallery-img-wrapper">
+								<img src="images/afterMale.jpg" alt="After Treatment" class="gallery-img"
+									data-caption="After Treatment" />
+								<div class="gallery-hover-overlay">
+									<span class="gallery-zoom-icon">&#128269;</span>
+								</div>
+							</div>
+							<div class="gallery-caption">After Treatment</div>
+						</div>
 
-						<label for="contact-pref">Contact Preference</label>
-						<select id="contact-pref" name="contact-pref" required>
-							<option value="">Select preferred method of contact</option>
-							<option value="email">E-Mail</option>
-							<option value="call">Call</option>
-							<option value="text">Text</option>
-						</select>
+						<div class="gallery-card">
+							<div class="gallery-img-wrapper">
+								<img src="images/beforeAndAfter3.jpg" alt="Before and After" class="gallery-img"
+									data-caption="Before and After Comparison" />
+								<div class="gallery-hover-overlay">
+									<span class="gallery-zoom-icon">&#128269;</span>
+								</div>
+							</div>
+							<div class="gallery-caption">Before and After</div>
+						</div>
 
-						<label for="questions">Questions</label>
-						<textarea id="questions" name="questions" rows="4" required></textarea>
+						<div class="gallery-card">
+							<div class="gallery-img-wrapper">
+								<img src="images/BeforeAfter_Image_1.jpg" alt="Before and After" class="gallery-img"
+									data-caption="Before and After Result" />
+								<div class="gallery-hover-overlay">
+									<span class="gallery-zoom-icon">&#128269;</span>
+								</div>
+							</div>
+							<div class="gallery-caption">Before and After</div>
+						</div>
 
-						<button type="submit">Get A Free Quote</button>
-						<h3>
-							If for any reason you need to cancel or reshedule please do so 24 hours in advance of
-							appointment.
-						</h3>
-						<div id="result"></div>
+						<div class="gallery-card">
+							<div class="gallery-img-wrapper">
+								<img src="images/SMP_Image_1.jpg" alt="SMP Treatment" class="gallery-img"
+									data-caption="SMP Treatment Result" />
+								<div class="gallery-hover-overlay">
+									<span class="gallery-zoom-icon">&#128269;</span>
+								</div>
+							</div>
+							<div class="gallery-caption">SMP Treatment Result</div>
+						</div>
+
+						<div class="gallery-card">
+							<div class="gallery-img-wrapper">
+								<img src="images/SMP_Image_2.jpg" alt="SMP Treatment" class="gallery-img"
+									data-caption="SMP Treatment Result" />
+								<div class="gallery-hover-overlay">
+									<span class="gallery-zoom-icon">&#128269;</span>
+								</div>
+							</div>
+							<div class="gallery-caption">SMP Treatment Result</div>
+						</div>
+
+						<div class="gallery-card">
+							<div class="gallery-img-wrapper">
+								<img src="images/before7.jpg" alt="Before Treatment" class="gallery-img"
+									data-caption="Before Treatment" />
+								<div class="gallery-hover-overlay">
+									<span class="gallery-zoom-icon">&#128269;</span>
+								</div>
+							</div>
+							<div class="gallery-caption">Before Treatment</div>
+						</div>
+
+						<div class="gallery-card">
+							<div class="gallery-img-wrapper">
+								<img src="images/After7.jpg" alt="After Treatment" class="gallery-img"
+									data-caption="After Treatment" />
+								<div class="gallery-hover-overlay">
+									<span class="gallery-zoom-icon">&#128269;</span>
+								</div>
+							</div>
+							<div class="gallery-caption">After Treatment</div>
+						</div>
+
+						<div class="gallery-card">
+							<div class="gallery-img-wrapper">
+								<img src="images/before4.jpg" alt="Before Treatment" class="gallery-img"
+									data-caption="Before Treatment" />
+								<div class="gallery-hover-overlay">
+									<span class="gallery-zoom-icon">&#128269;</span>
+								</div>
+							</div>
+							<div class="gallery-caption">Before Treatment</div>
+						</div>
+
+						<div class="gallery-card">
+							<div class="gallery-img-wrapper">
+								<img src="images/After4.jpg" alt="After Treatment" class="gallery-img"
+									data-caption="After Treatment" />
+								<div class="gallery-hover-overlay">
+									<span class="gallery-zoom-icon">&#128269;</span>
+								</div>
+							</div>
+							<div class="gallery-caption">After Treatment</div>
+						</div>
+
+						<div class="gallery-card">
+							<div class="gallery-img-wrapper">
+								<img src="images/before5.jpg" alt="Before Treatment" class="gallery-img"
+									data-caption="Before Treatment" />
+								<div class="gallery-hover-overlay">
+									<span class="gallery-zoom-icon">&#128269;</span>
+								</div>
+							</div>
+							<div class="gallery-caption">Before Treatment</div>
+						</div>
+
+						<div class="gallery-card">
+							<div class="gallery-img-wrapper">
+								<img src="images/After5.jpg" alt="After Treatment" class="gallery-img"
+									data-caption="After Treatment" />
+								<div class="gallery-hover-overlay">
+									<span class="gallery-zoom-icon">&#128269;</span>
+								</div>
+							</div>
+							<div class="gallery-caption">After Treatment</div>
+						</div>
+
+						<div class="gallery-card">
+							<div class="gallery-img-wrapper">
+								<img src="images/before6.jpg" alt="Before Treatment" class="gallery-img"
+									data-caption="Before Treatment" />
+								<div class="gallery-hover-overlay">
+									<span class="gallery-zoom-icon">&#128269;</span>
+								</div>
+							</div>
+							<div class="gallery-caption">Before Treatment</div>
+						</div>
+
+						<div class="gallery-card">
+							<div class="gallery-img-wrapper">
+								<img src="images/After6.jpg" alt="After Treatment" class="gallery-img"
+									data-caption="After Treatment" />
+								<div class="gallery-hover-overlay">
+									<span class="gallery-zoom-icon">&#128269;</span>
+								</div>
+							</div>
+							<div class="gallery-caption">After Treatment</div>
+						</div>
 					</div>
-				</form>
+				</section>
+
+				<section id="faq_Section" class="faq_Section">
+					<div class="faq_Container">
+						<h1 class="faq_Title">Frequently Asked Questions</h1>
+						<p class="faq_Intro">
+							Have questions about Scalp Micropigmentation (SMP) or our services? Find answers below, or
+							<a href="#contact_Section">contact us</a> for a free, no-obligation consultation.
+						</p>
+						<div class="faq_Accordion">
+							<div class="faq_Item">
+								<button class="faq_Question" type="button">What is Scalp Micropigmentation
+									(SMP)?</button>
+								<div class="faq_Answer">
+									<p>SMP is a non-surgical, cosmetic tattoo procedure that replicates the appearance
+										of natural hair follicles, providing the look of a fuller head of hair or a
+										closely-shaved scalp.</p>
+								</div>
+							</div>
+							<div class="faq_Item">
+								<button class="faq_Question" type="button">Is SMP safe and does it hurt?</button>
+								<div class="faq_Answer">
+									<p>Yes, SMP is a safe procedure when performed by a trained professional. Most
+										clients report minimal discomfort, often less than a traditional tattoo.</p>
+								</div>
+							</div>
+							<div class="faq_Item">
+								<button class="faq_Question" type="button">How long does the SMP process take?</button>
+								<div class="faq_Answer">
+									<p>Typically, SMP requires 2-4 sessions, each lasting 2-4 hours, depending on your
+										needs. We personalize every treatment plan during your free consultation.</p>
+								</div>
+							</div>
+							<div class="faq_Item">
+								<button class="faq_Question" type="button">Will SMP look natural on me?</button>
+								<div class="faq_Answer">
+									<p>Absolutely! We match pigment to your natural hair and skin tone, ensuring a
+										seamless, realistic result. Check our <a href="#gallery_Section">gallery</a> for
+										real client transformations.</p>
+								</div>
+							</div>
+							<div class="faq_Item">
+								<button class="faq_Question" type="button">How long does SMP last?</button>
+								<div class="faq_Answer">
+									<p>SMP results can last 4-6 years before a touch-up is needed. Proper aftercare
+										helps maintain your look for as long as possible.</p>
+								</div>
+							</div>
+							<div class="faq_Item">
+								<button class="faq_Question" type="button">Is there any downtime after the
+									procedure?</button>
+								<div class="faq_Answer">
+									<p>There is minimal downtime. Most clients resume normal activities within 1-2 days.
+										We provide detailed aftercare instructions for the best results.</p>
+								</div>
+							</div>
+							<div class="faq_Item">
+								<button class="faq_Question" type="button">Can SMP help with scars or alopecia?</button>
+								<div class="faq_Answer">
+									<p>Yes! SMP is effective for camouflaging scars, alopecia, and thinning hair. Book a
+										free consultation to discuss your unique needs.</p>
+								</div>
+							</div>
+							<div class="faq_Item">
+								<button class="faq_Question" type="button">How do I get started?</button>
+								<div class="faq_Answer">
+									<p>Simply <a href="#contact_Section">contact us</a> or use our online booking form
+										to schedule your free consultation. We'll answer all your questions and create a
+										personalized plan.</p>
+								</div>
+							</div>
+							<div class="faq_Item">
+								<button class="faq_Question" type="button">Is the consultation really free?</button>
+								<div class="faq_Answer">
+									<p>Yes! Our consultations are 100% free and commitment-free. We want you to feel
+										confident and informed before making any decisions.</p>
+								</div>
+							</div>
+							<div class="faq_Item">
+								<button class="faq_Question" type="button">What makes SMP SeaTac different?</button>
+								<div class="faq_Answer">
+									<p>We are fully licensed, trained by the best in Washington, and focus on
+										personalized care and natural results. Your satisfaction and comfort are our top
+										priorities.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section id="contact_Section" class="contact_Section">
+					<div class="contact_Container modern-contact">
+						<div class="contact_left">
+							<div class="contact_Title">
+								<h1 class="title">CONTACT US</h1>
+								<p class="contact_Quote">"Beauty begins the moment you decide to be yourself."</p>
+							</div>
+
+							<div class="form_LogoOwnerRow">
+								<div class="form_Logo">
+									<img src="images/ClientLogo.jpg" alt="Logo">
+								</div>
+								<div class="form_Owner">
+									<img src="images/Client_Image_2.jpg" alt="Owner">
+								</div>
+							</div>
+							<div class="contact_Info">
+								<h2>Have any questions? Feel free to contact us, or submit the form below.</h2>
+								<p><strong>Email:</strong> SMPINKSEATAC@GMAIL.COM</p>
+								<p><strong>Phone:</strong> 206-307-0755</p>
+								<p>
+									<strong>Social:</strong>
+									<a href="https://www.instagram.com/smp_seatac/" target="_blank" rel="noopener">
+										<i class="fab fa-instagram"></i> @smp_seatac
+									</a>
+								</p>
+							</div>
+						</div>
+
+						<div class="contact_right">
+
+							<iframe src="https://webformafy.com/Forms/View/2?embed=1" width="100%" height="100%"
+								style="height: 870px;width:100%;border:none;display:block"></iframe>
+
+						</div>
+					</div>
 			</div>
+	</div>
+	</section>
+
+	<!-- Floating Booking Button -->
+	<button class="booking-float-btn" type="button">
+		<img src="images/ClientLogo.jpg" alt="SMP Seatac Logo" class="booking-btn-logo" />
+		<span class="booking-btn-text">Book a Consultation</span>
+	</button>
+
+	<!-- Floating Booking Form (initially hidden) -->
+	<div id="bookingFormFloat" class="booking-form-float" style="display: none;">
+		<span class="close-icon" id="closeBookingFormBtn" title="Close">&times;</span>
+		<iframe src="https://webformafy.com/Forms/View/11?embed=1" width="100%" height="100%"
+			style="height: 800px;width:100%;border:none;display:block"></iframe>
+
+	</div>
+
+	<div id="lightbox"
+		style="display:none; position:fixed; z-index:2000; top:0; left:0; width:100vw; height:100vh; background:rgba(35,41,70,0.85); align-items:center; justify-content:center; flex-direction:column;">
+		<span id="lightbox-close"
+			style="color:#fff; font-size:2.5em; position:absolute; top:2%; right:3%; cursor:pointer;">&times;</span>
+		<img id="lightbox-img" src="" alt="Gallery Image"
+			style="max-width:90vw; max-height:80vh; border-radius:1em; box-shadow:0 0 32px #0008;">
+		<div id="lightbox-caption" style="color:#fff; margin-top:1em; font-size:1.2em; text-align:center;">
 		</div>
 	</div>
+
+	</div>
+	</main>
 	</div>
 
-	<!-- Consultation Booking Calendar -->
-	<div id="bookingCalendar" class="calendar">
-
-		<div class="grid-calender-logo">
-			<!--Modified link-->
-			<img src=".\Images\ClientLogo.jpg" width="150" height="150">
-		</div>
-		<button id="openForm" class="btn btn-success">Book a Consultation</button>
-	</div>
-
-	<!-- Popout Form -->
-	<div id="bookingForm" class="form-popup">
-		<form id="consultation-Form" class="consultation-Form" action="https://api.web3forms.com/submit" method="POST">
-			<input type="hidden" name="apikey" value="4b1d784c-ac87-45c5-8fdc-bbe744ca79b7">
-			<h2>Book Your Consultation</h2>
-			<label for="name">Name</label>
-			<input type="text" placeholder="Enter Full name" name="name" required>
-
-			<label for="email">Email</label>
-			<input type="email" placeholder="Enter your email" name="email" required>
-
-			<label for="phone">Phone Number</label>
-			<input type="tel" placeholder="Enter your phone number" name="phone" required>
-
-			<label for="visit-preference">Preferred Visit Method</label>
-			<select name="visit-preference" required>
-				<option value="">Select Visit Method</option>
-				<option value="in-person">In-Person</option>
-				<option value="virtual">Virtual</option>
-			</select>
-			<label for="date">Select Date</label>
-			<input type="date" name="date" required>
-
-			<label for="time">Select Time</label>
-			<select name="time" required>
-				<option value="">Select Time</option>
-				<option value="09:00">09:00 AM</option>
-				<option value="09:30">09:30 AM</option>
-				<option value="10:00">10:00 AM</option>
-				<option value="10:30">10:30 AM</option>
-				<option value="11:00">11:00 AM</option>
-				<option value="11:30">11:30 PM</option>
-				<option value="12:00">12:00 PM</option>
-				<option value="12:30">12:30 PM</option>
-				<option value="1:00">01:00 PM</option>
-				<option value="1:30">01:30 PM</option>
-				<option value="2:00">02:00 PM</option>
-				<option value="2:30">02:30 PM</option>
-				<option value="3:00">03:00 PM</option>
-				<option value="3:30">03:30 PM</option>
-				<option value="4:00">04:00 PM</option>
-				<option value="4:30">04:30 PM</option>
-			</select>
-
-			<button type="submit" class="btn btn-primary">Submit</button>
-			<button type="button" class="btn btn-danger" id="closeForm">Close</button>
-			<div id="resultTwo"></div>
-		</form>
-	</div>
-	<div class="footer-row-row">
-
-		<footer>
-			<div class="footer-container">
-				<div class="footer-socialmedia-row">
-					<a href="https://www.instagram.com/smp_seatac/?igsh=MW4xNDEwOGM0b3c4dg%3D%3D#" target="_blank">
-						<i class="fa fa-instagram"></i>
-					</a>
-				</div>
-
-				<div class="footer-row">
-					<ul>
-						<li><a href="#contact">Contact us</a></li>
-						<li><a href="#about">About us</a></li>
-						<li><a href="#gallery">Gallery</a></li>
-						<li><a href="#faq">FAQ</a></li>
-					</ul>
-				</div>
-				<div class="footer-closing">
-					<h3>&copy; 2025 SMP SeaTac. All rights reserved.
-					</h3>
-					<h4>Designed by: </h4>
-						<Ul>
-							<li><a href="https://www.linkedin.com/in/stacy-dao-5a1609329/">Stacy</a></li>
-							<li><a href="https://www.linkedin.com/in/mckieth-arradondo/">Obe</a></li>
-							<li><a href="https://www.linkedin.com/in/je%E2%80%99chaun-lawson-008433170/">Je'Chaun</a></li>
-							<li><a href="https://www.linkedin.com/in/duc-vy-dang/">Vy</a></li>
-						</Ul>
-				</div>
+	<footer class="footer backend-footer">
+		<div class="footer-container">
+			<img src="images/ClientLogo.jpg" alt="Logo" class="footer-logo" />
+			<div class="footer-links">
+				<a class="nav-link text-white nav-font" href="#about-section">About</a>
+				<a class="nav-link text-white nav-font" href="#gallery_Section">Gallery</a>
+				<a class="nav-link text-white nav-font" href="#faq_Section">FAQ</a>
+				<a class="nav-link text-white nav-font" href="#contact_Section">Contact</a>
 			</div>
-		</footer>
-	</div>
-	<!-- Bootstrap & jQuery JS -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+			<div class="footer-social">
+				<!-- social icons here -->
+			</div>
+			<div class="footer-copy">
+				&copy; 2025 SMP SeaTac. All rights reserved.
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="site.js"></script>
 </body>
-
 
 </html>
